@@ -11,7 +11,10 @@ class CounterAppView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Counter App"),
+        title: GetX<CounterController>(builder: (controller) {
+          return Text(
+              "Counter App / Count : " + controller.counter.value.toString());
+        }),
       ),
       body: Center(
         child: Column(
