@@ -5,6 +5,9 @@ class HomeBindings implements Bindings {
   //Register all Dependenices here
   @override
   void dependencies() {
-    Get.lazyPut<CounterController>(()=>CounterController()); //Lazy loads dependencies
+    Get.lazyPut<CounterController>(
+        () => CounterController()); //Lazy loads dependencies
+    Get.lazyPut<CounterController>(() => CounterController(),
+        tag: "nextController");
   }
 }
