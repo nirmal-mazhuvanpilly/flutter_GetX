@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_getx/controller/home_bindings.dart';
 import 'package:flutter_getx/view/counter_app.dart';
+import 'package:flutter_getx/view/sample_view.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:get/route_manager.dart';
 
@@ -49,7 +50,14 @@ class HomePage extends StatelessWidget {
                       builder: (context) => CounterAppView(),
                     ));
                   },
-                  child: const Text("Counter App"))
+                  child: const Text("Counter App")),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const SampleDataView(),
+                    ));
+                  },
+                  child: const Text("Sample Data App"))
             ],
           ),
         ),

@@ -1,4 +1,5 @@
 import 'package:flutter_getx/controller/counter_controller.dart';
+import 'package:flutter_getx/controller/sample_controller.dart';
 import 'package:get/get.dart';
 
 class HomeBindings implements Bindings {
@@ -9,5 +10,6 @@ class HomeBindings implements Bindings {
         () => CounterController()); //Lazy loads dependencies
     Get.lazyPut<CounterController>(() => CounterController(),
         tag: "nextController");
+    Get.lazyPut<SampleController>(() => SampleController());
   }
 }
