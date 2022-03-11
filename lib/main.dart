@@ -22,7 +22,6 @@ class MyApp extends StatelessWidget {
         GetPage(
             name: "/", page: () => const HomePage(), binding: HomeBindings())
       ],
-      
     );
   }
 }
@@ -32,6 +31,29 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CounterAppView();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("GetX"),
+        centerTitle: true,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => CounterAppView(),
+                    ));
+                  },
+                  child: const Text("Counter App"))
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
